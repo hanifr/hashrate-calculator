@@ -61,6 +61,7 @@ if [ -z $EXP_MONERO_HASHRATE ]; then
   exit 1
 fi
 
+REAL_XMR_HASHRATE=$(($EXP_MONERO_HASHRATE * 10 ))
 echo
-echo "JFYI: This host has $CPU_THREADS CPU threads with $CPU_MHZ MHz and ${TOTAL_CACHE}KB data cache in total, so projected Monero hashrate is around $EXP_MONERO_HASHRATE H/s."
+echo "JFYI: This host has $CPU_THREADS CPU threads with $CPU_MHZ MHz and ${TOTAL_CACHE}KB data cache in total, so projected Monero hashrate is around $REAL_XMR_HASHRATE H/s."
 echo
