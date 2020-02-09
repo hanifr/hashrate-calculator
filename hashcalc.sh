@@ -16,7 +16,7 @@ if [ -z "$CPU_THREADS" ]; then
   echo "WARNING: Can't get CPU cores from lscpu output"
   export CPU_THREADS=1
 fi
-CPU_MHZ=`echo "$LSCPU" | grep "^CPU MHz:" | cut -d':' -f2 | sed "s/^[ \t]*//"`
+CPU_MHZ=`echo "$LSCPU" | grep "^CPU max MHz:" | cut -d':' -f2 | sed "s/^[ \t]*//"`
 CPU_MHZ=${CPU_MHZ%.*}
 if [ -z "$CPU_MHZ" ]; then
   echo "WARNING: Can't get CPU MHz from lscpu output"
